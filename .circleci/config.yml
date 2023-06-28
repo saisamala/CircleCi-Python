@@ -22,7 +22,7 @@ jobs:
       - run: echo "Deploying to production server"
 
 workflows: #creating worlkflows to execute step-by-step
-  build_now:
+  build_test_and_deploy:
     jobs:
       - build
       - test:
