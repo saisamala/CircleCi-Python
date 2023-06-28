@@ -1,0 +1,9 @@
+version: 2.1
+
+jobs:
+  build: #building environment
+    docker:
+      - image: cimg/python:3.11
+    steps:
+      - checkout
+      - run: python main.py
