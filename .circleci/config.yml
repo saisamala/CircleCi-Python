@@ -7,3 +7,18 @@ jobs:
     steps:
       - checkout
       - run: python main.py
+
+  test: #testing 
+    docker:
+      - image: cimg/python:3.11
+    steps:
+      - checkout
+      - run: python test.py
+
+workflows: #creating worlkflows to execute step-by-step
+  build_now:
+    jobs:
+      - build
+      - test:
+          requires:
+            - build
